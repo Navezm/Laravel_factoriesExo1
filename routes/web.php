@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\BuildingController;
+use App\Http\Controllers\StudentController;
+use App\Http\Controllers\TrainingController;
+use App\Http\Controllers\TrainingTypeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [BuildingController::class,'index']);
+Route::get('/training', [TrainingController::class,'index']);
+Route::get('/trainingType', [TrainingTypeController::class,'index']);
+Route::get('/students', [StudentController::class,'index']);
